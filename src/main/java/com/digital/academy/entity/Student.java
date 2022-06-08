@@ -13,8 +13,8 @@ import java.util.Objects;
 
 @Getter
 @Setter
+@ToString
 @RequiredArgsConstructor
-@NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "tb_students")
@@ -38,7 +38,8 @@ public class Student {
 
   @OneToMany(mappedBy = "student", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
   @JsonIgnore
-  private List<PhysicalEvaluation> evaluation = new ArrayList<>();
+  @ToString.Exclude
+  private List<PhysicalEvaluation> evaluations = new ArrayList<>();
 
   @Override
   public boolean equals(Object o) {
@@ -51,11 +52,5 @@ public class Student {
   @Override
   public int hashCode() {
     return getClass().hashCode();
-  }
-
-  @Override
-  public String toString() {
-    return getClass().getSimpleName() + "(" +
-            "id = " + id + ")";
   }
 }

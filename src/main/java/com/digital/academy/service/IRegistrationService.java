@@ -8,28 +8,28 @@ import java.util.List;
 public interface IRegistrationService {
   /**
    * Cria uma Matrícula e salva no banco de dados.
-   * @param form - formulário referente aos dados para criação da Matrícula no banco de dados.
+   * @param registrationForm - formulário referente aos dados para criação da Matrícula no banco de dados.
    * @return - Matrícula recém-criada.
    */
-  Registration create(RegistrationFormDTO form);
+  Registration createRegistration(RegistrationFormDTO registrationForm);
 
   /**
    * Retorna uma Matrícula que está no banco de dados de acordo com seu Id.
    * @param id - id da Matrícula que será exibida.
    * @return - Matrícula de acordo com o Id fornecido.
    */
-  Registration get(Long id);
+  Registration getRegistration(Long id);
 
   /**
    * Retorna todas as Matrículas que estão no banco de dados.
    * @return - uma lista com todas as Matrículas que estão salvas no DB.
    */
-  List<Registration> getAll();
+  List<Registration> getAllRegistrations(String residenceAddress);
 
   /**
-   * Deleta uma Matrícula específica.
+   * Exclui uma Matrícula específica.
    * @param id - id da Matrícula que será removida.
    */
-  void delete(Long id);
+  void deleteRegistration(Long id);
 
 }

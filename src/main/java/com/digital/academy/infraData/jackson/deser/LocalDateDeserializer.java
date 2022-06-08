@@ -9,9 +9,6 @@ import java.io.IOException;
 import java.io.Serial;
 import java.time.LocalDate;
 
-/**
- * @author Venilton Falvo Jr
- */
 public class LocalDateDeserializer extends StdDeserializer<LocalDate> {
 
 	@Serial
